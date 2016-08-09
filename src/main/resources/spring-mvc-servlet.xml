@@ -12,9 +12,9 @@
        <!-- Maps '/' requests to the 'home' view -->
        <mvc:view-controller path="/" view-name="home/index"/>
        <!-- resource mapping-->
-      <!-- <mvc:resources mapping="/resources/**" location="/resources/"/>-->
+       <mvc:resources mapping="/resources/**" location="/resources/"/>
        <!-- map requests for web jars-->
-<!--       <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>-->
+       <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
        <!-- 使用默认的Servlet来响应静态文件  -->
        <mvc:default-servlet-handler/>
        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

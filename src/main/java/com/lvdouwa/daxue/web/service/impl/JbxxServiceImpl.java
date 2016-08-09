@@ -5,12 +5,15 @@ import com.lvdouwa.daxue.core.generic.GenericServiceImpl;
 import com.lvdouwa.daxue.web.dao.JbxxMapper;
 import com.lvdouwa.daxue.web.model.Jbxx;
 import com.lvdouwa.daxue.web.service.JbxxService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 /**
  * Created by u6031313 on 8/9/2016.
  */
+@Service("jbxxService")
 public class JbxxServiceImpl extends GenericServiceImpl<Jbxx,Integer> implements JbxxService {
 
     @Resource
