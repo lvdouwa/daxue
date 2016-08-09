@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvdouwa.daxue.web.dao.JbxxMapper">
+  <resultMap id="BaseResultMap" type="com.lvdouwa.daxue.web.model.Jbxx">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="subjection" jdbcType="VARCHAR" property="subjection" />
+    <result column="keydiscipline" jdbcType="INTEGER" property="keydiscipline" />
+    <result column="academician" jdbcType="INTEGER" property="academician" />
+    <result column="doctordegree" jdbcType="INTEGER" property="doctordegree" />
+    <result column="masterdegree" jdbcType="INTEGER" property="masterdegree" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="985or211" jdbcType="VARCHAR" property="985or211" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="web" jdbcType="VARCHAR" property="web" />
+    <result column="profile" jdbcType="VARCHAR" property="profile" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    insert into jbxx (uid, name, type, 
+      subjection, keydiscipline, academician, 
+      doctordegree, masterdegree, location, 
+      985or211, address, telephone, 
+      web, profile)
+    values (#{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{subjection,jdbcType=VARCHAR}, #{keydiscipline,jdbcType=INTEGER}, #{academician,jdbcType=INTEGER}, 
+      #{doctordegree,jdbcType=INTEGER}, #{masterdegree,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, 
+      #{985or211,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{web,jdbcType=VARCHAR}, #{profile,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    insert into jbxx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="subjection != null">
+        subjection,
+      </if>
+      <if test="keydiscipline != null">
+        keydiscipline,
+      </if>
+      <if test="academician != null">
+        academician,
+      </if>
+      <if test="doctordegree != null">
+        doctordegree,
+      </if>
+      <if test="masterdegree != null">
+        masterdegree,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="985or211 != null">
+        985or211,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="web != null">
+        web,
+      </if>
+      <if test="profile != null">
+        profile,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="subjection != null">
+        #{subjection,jdbcType=VARCHAR},
+      </if>
+      <if test="keydiscipline != null">
+        #{keydiscipline,jdbcType=INTEGER},
+      </if>
+      <if test="academician != null">
+        #{academician,jdbcType=INTEGER},
+      </if>
+      <if test="doctordegree != null">
+        #{doctordegree,jdbcType=INTEGER},
+      </if>
+      <if test="masterdegree != null">
+        #{masterdegree,jdbcType=INTEGER},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="985or211 != null">
+        #{985or211,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="web != null">
+        #{web,jdbcType=VARCHAR},
+      </if>
+      <if test="profile != null">
+        #{profile,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lvdouwa.daxue.web.model.Jbxx">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="subjection" jdbcType="VARCHAR" property="subjection" />
+    <result column="keydiscipline" jdbcType="INTEGER" property="keydiscipline" />
+    <result column="academician" jdbcType="INTEGER" property="academician" />
+    <result column="doctordegree" jdbcType="INTEGER" property="doctordegree" />
+    <result column="masterdegree" jdbcType="INTEGER" property="masterdegree" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="985or211" jdbcType="VARCHAR" property="985or211" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="web" jdbcType="VARCHAR" property="web" />
+    <result column="profile" jdbcType="VARCHAR" property="profile" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    uid, name, type, subjection, keydiscipline, academician, doctordegree, masterdegree, 
+    location, 985or211, address, telephone, web, profile
+  </sql>
+  <select id="selectByExample" parameterType="com.lvdouwa.daxue.web.model.JbxxExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jbxx
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.lvdouwa.daxue.web.model.JbxxExample">
+    delete from jbxx
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    insert into jbxx (uid, name, type, 
+      subjection, keydiscipline, academician, 
+      doctordegree, masterdegree, location, 
+      985or211, address, telephone, 
+      web, profile)
+    values (#{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{subjection,jdbcType=VARCHAR}, #{keydiscipline,jdbcType=INTEGER}, #{academician,jdbcType=INTEGER}, 
+      #{doctordegree,jdbcType=INTEGER}, #{masterdegree,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, 
+      #{985or211,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{web,jdbcType=VARCHAR}, #{profile,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    insert into jbxx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="subjection != null">
+        subjection,
+      </if>
+      <if test="keydiscipline != null">
+        keydiscipline,
+      </if>
+      <if test="academician != null">
+        academician,
+      </if>
+      <if test="doctordegree != null">
+        doctordegree,
+      </if>
+      <if test="masterdegree != null">
+        masterdegree,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="985or211 != null">
+        985or211,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="web != null">
+        web,
+      </if>
+      <if test="profile != null">
+        profile,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="subjection != null">
+        #{subjection,jdbcType=VARCHAR},
+      </if>
+      <if test="keydiscipline != null">
+        #{keydiscipline,jdbcType=INTEGER},
+      </if>
+      <if test="academician != null">
+        #{academician,jdbcType=INTEGER},
+      </if>
+      <if test="doctordegree != null">
+        #{doctordegree,jdbcType=INTEGER},
+      </if>
+      <if test="masterdegree != null">
+        #{masterdegree,jdbcType=INTEGER},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="985or211 != null">
+        #{985or211,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="web != null">
+        #{web,jdbcType=VARCHAR},
+      </if>
+      <if test="profile != null">
+        #{profile,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lvdouwa.daxue.web.model.JbxxExample" resultType="java.lang.Integer">
+    select count(*) from jbxx
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update jbxx
+    <set>
+      <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjection != null">
+        subjection = #{record.subjection,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keydiscipline != null">
+        keydiscipline = #{record.keydiscipline,jdbcType=INTEGER},
+      </if>
+      <if test="record.academician != null">
+        academician = #{record.academician,jdbcType=INTEGER},
+      </if>
+      <if test="record.doctordegree != null">
+        doctordegree = #{record.doctordegree,jdbcType=INTEGER},
+      </if>
+      <if test="record.masterdegree != null">
+        masterdegree = #{record.masterdegree,jdbcType=INTEGER},
+      </if>
+      <if test="record.location != null">
+        location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.985or211 != null">
+        985or211 = #{record.985or211,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telephone != null">
+        telephone = #{record.telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.web != null">
+        web = #{record.web,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profile != null">
+        profile = #{record.profile,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update jbxx
+    set uid = #{record.uid,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      subjection = #{record.subjection,jdbcType=VARCHAR},
+      keydiscipline = #{record.keydiscipline,jdbcType=INTEGER},
+      academician = #{record.academician,jdbcType=INTEGER},
+      doctordegree = #{record.doctordegree,jdbcType=INTEGER},
+      masterdegree = #{record.masterdegree,jdbcType=INTEGER},
+      location = #{record.location,jdbcType=VARCHAR},
+      985or211 = #{record.985or211,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      telephone = #{record.telephone,jdbcType=VARCHAR},
+      web = #{record.web,jdbcType=VARCHAR},
+      profile = #{record.profile,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <resultMap id="BaseResultMap" type="com.lvdouwa.daxue.web.model.Jbxx">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="subjection" jdbcType="VARCHAR" property="subjection" />
+    <result column="keydiscipline" jdbcType="INTEGER" property="keydiscipline" />
+    <result column="academician" jdbcType="INTEGER" property="academician" />
+    <result column="doctordegree" jdbcType="INTEGER" property="doctordegree" />
+    <result column="masterdegree" jdbcType="INTEGER" property="masterdegree" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="985or211" jdbcType="VARCHAR" property="985or211" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="web" jdbcType="VARCHAR" property="web" />
+    <result column="profile" jdbcType="VARCHAR" property="profile" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    uid, name, type, subjection, keydiscipline, academician, doctordegree, masterdegree, 
+    location, 985or211, address, telephone, web, profile
+  </sql>
+  <select id="selectByExample" parameterType="com.lvdouwa.daxue.web.model.JbxxExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jbxx
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.lvdouwa.daxue.web.model.JbxxExample">
+    delete from jbxx
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    insert into jbxx (uid, name, type, 
+      subjection, keydiscipline, academician, 
+      doctordegree, masterdegree, location, 
+      985or211, address, telephone, 
+      web, profile)
+    values (#{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{subjection,jdbcType=VARCHAR}, #{keydiscipline,jdbcType=INTEGER}, #{academician,jdbcType=INTEGER}, 
+      #{doctordegree,jdbcType=INTEGER}, #{masterdegree,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, 
+      #{985or211,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{web,jdbcType=VARCHAR}, #{profile,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    insert into jbxx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="subjection != null">
+        subjection,
+      </if>
+      <if test="keydiscipline != null">
+        keydiscipline,
+      </if>
+      <if test="academician != null">
+        academician,
+      </if>
+      <if test="doctordegree != null">
+        doctordegree,
+      </if>
+      <if test="masterdegree != null">
+        masterdegree,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="985or211 != null">
+        985or211,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="web != null">
+        web,
+      </if>
+      <if test="profile != null">
+        profile,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="subjection != null">
+        #{subjection,jdbcType=VARCHAR},
+      </if>
+      <if test="keydiscipline != null">
+        #{keydiscipline,jdbcType=INTEGER},
+      </if>
+      <if test="academician != null">
+        #{academician,jdbcType=INTEGER},
+      </if>
+      <if test="doctordegree != null">
+        #{doctordegree,jdbcType=INTEGER},
+      </if>
+      <if test="masterdegree != null">
+        #{masterdegree,jdbcType=INTEGER},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="985or211 != null">
+        #{985or211,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="web != null">
+        #{web,jdbcType=VARCHAR},
+      </if>
+      <if test="profile != null">
+        #{profile,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lvdouwa.daxue.web.model.JbxxExample" resultType="java.lang.Integer">
+    select count(*) from jbxx
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update jbxx
+    <set>
+      <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjection != null">
+        subjection = #{record.subjection,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keydiscipline != null">
+        keydiscipline = #{record.keydiscipline,jdbcType=INTEGER},
+      </if>
+      <if test="record.academician != null">
+        academician = #{record.academician,jdbcType=INTEGER},
+      </if>
+      <if test="record.doctordegree != null">
+        doctordegree = #{record.doctordegree,jdbcType=INTEGER},
+      </if>
+      <if test="record.masterdegree != null">
+        masterdegree = #{record.masterdegree,jdbcType=INTEGER},
+      </if>
+      <if test="record.location != null">
+        location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.985or211 != null">
+        985or211 = #{record.985or211,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telephone != null">
+        telephone = #{record.telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.web != null">
+        web = #{record.web,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profile != null">
+        profile = #{record.profile,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update jbxx
+    set uid = #{record.uid,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      subjection = #{record.subjection,jdbcType=VARCHAR},
+      keydiscipline = #{record.keydiscipline,jdbcType=INTEGER},
+      academician = #{record.academician,jdbcType=INTEGER},
+      doctordegree = #{record.doctordegree,jdbcType=INTEGER},
+      masterdegree = #{record.masterdegree,jdbcType=INTEGER},
+      location = #{record.location,jdbcType=VARCHAR},
+      985or211 = #{record.985or211,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      telephone = #{record.telephone,jdbcType=VARCHAR},
+      web = #{record.web,jdbcType=VARCHAR},
+      profile = #{record.profile,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>
