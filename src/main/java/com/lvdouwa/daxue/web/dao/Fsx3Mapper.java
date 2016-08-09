@@ -1,11 +1,12 @@
 package com.lvdouwa.daxue.web.dao;
 
+import com.lvdouwa.daxue.core.generic.GenericDao;
 import com.lvdouwa.daxue.web.model.Fsx3;
 import com.lvdouwa.daxue.web.model.Fsx3Example;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface Fsx3Mapper {
+public interface Fsx3Mapper extends GenericDao {
     int countByExample(Fsx3Example example);
 
     int deleteByExample(Fsx3Example example);

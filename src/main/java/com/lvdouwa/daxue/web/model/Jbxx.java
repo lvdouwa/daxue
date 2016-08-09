@@ -19,7 +19,7 @@ public class Jbxx {
 
     private String location;
 
-    private String 985or211;
+    private String is985or211;
 
     private String address;
 
@@ -101,12 +101,12 @@ public class Jbxx {
         this.location = location == null ? null : location.trim();
     }
 
-    public String get985or211() {
-        return 985or211;
+    public String getIs985or211() {
+        return is985or211;
     }
 
-    public void set985or211(String 985or211) {
-        this.985or211 = 985or211 == null ? null : 985or211.trim();
+    public void setIs985or211(String is985or211) {
+        this.is985or211 = is985or211 == null ? null : is985or211.trim();
     }
 
     public String getAddress() {

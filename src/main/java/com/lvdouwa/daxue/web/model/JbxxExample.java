@@ -684,73 +684,73 @@ public class JbxxExample {
             return (Criteria) this;
         }
 
-        public Criteria and985or211IsNull() {
-            addCriterion("985or211 is null");
+        public Criteria andIs985or211IsNull() {
+            addCriterion("is985or211 is null");
             return (Criteria) this;
         }
 
-        public Criteria and985or211IsNotNull() {
-            addCriterion("985or211 is not null");
+        public Criteria andIs985or211IsNotNull() {
+            addCriterion("is985or211 is not null");
             return (Criteria) this;
         }
 
-        public Criteria and985or211EqualTo(String value) {
-            addCriterion("985or211 =", value, "985or211");
+        public Criteria andIs985or211EqualTo(String value) {
+            addCriterion("is985or211 =", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211NotEqualTo(String value) {
-            addCriterion("985or211 <>", value, "985or211");
+        public Criteria andIs985or211NotEqualTo(String value) {
+            addCriterion("is985or211 <>", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211GreaterThan(String value) {
-            addCriterion("985or211 >", value, "985or211");
+        public Criteria andIs985or211GreaterThan(String value) {
+            addCriterion("is985or211 >", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211GreaterThanOrEqualTo(String value) {
-            addCriterion("985or211 >=", value, "985or211");
+        public Criteria andIs985or211GreaterThanOrEqualTo(String value) {
+            addCriterion("is985or211 >=", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211LessThan(String value) {
-            addCriterion("985or211 <", value, "985or211");
+        public Criteria andIs985or211LessThan(String value) {
+            addCriterion("is985or211 <", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211LessThanOrEqualTo(String value) {
-            addCriterion("985or211 <=", value, "985or211");
+        public Criteria andIs985or211LessThanOrEqualTo(String value) {
+            addCriterion("is985or211 <=", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211Like(String value) {
-            addCriterion("985or211 like", value, "985or211");
+        public Criteria andIs985or211Like(String value) {
+            addCriterion("is985or211 like", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211NotLike(String value) {
-            addCriterion("985or211 not like", value, "985or211");
+        public Criteria andIs985or211NotLike(String value) {
+            addCriterion("is985or211 not like", value, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211In(List<String> values) {
-            addCriterion("985or211 in", values, "985or211");
+        public Criteria andIs985or211In(List<String> values) {
+            addCriterion("is985or211 in", values, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211NotIn(List<String> values) {
-            addCriterion("985or211 not in", values, "985or211");
+        public Criteria andIs985or211NotIn(List<String> values) {
+            addCriterion("is985or211 not in", values, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211Between(String value1, String value2) {
-            addCriterion("985or211 between", value1, value2, "985or211");
+        public Criteria andIs985or211Between(String value1, String value2) {
+            addCriterion("is985or211 between", value1, value2, "is985or211");
             return (Criteria) this;
         }
 
-        public Criteria and985or211NotBetween(String value1, String value2) {
-            addCriterion("985or211 not between", value1, value2, "985or211");
+        public Criteria andIs985or211NotBetween(String value1, String value2) {
+            addCriterion("is985or211 not between", value1, value2, "is985or211");
             return (Criteria) this;
         }
 

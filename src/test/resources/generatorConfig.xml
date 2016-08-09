@@ -27,25 +27,30 @@
         <!--生成xml mapper文件 路径 -->
         <sqlMapGenerator targetPackage="${xml.mapper.package}" targetProject="${target.project}">
             <property name="enableSubPackages" value="ture"/>
+
         </sqlMapGenerator>
 
         <!-- 生成的Dao接口 的包路径 -->
         <javaClientGenerator type="XMLMAPPER" targetPackage="${dao.package}" targetProject="${target.project}">
             <property name="enableSubPackages" value="ture"/>
-        </javaClientGenerator>
+            <property name="rootInterface" value="com.lvdouwa.daxue.core.generic.GenericDao"/>
+         </javaClientGenerator>
 
         <!--对应数据库表名 -->
         <!-- 要对那些数据表进行生成操作，必须要有一个. -->
-        <table schema="mybatis" tableName="jbxx"
-               enableCountByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"
-               selectByExampleQueryId="false">
+        <table schema="mybatis" tableName="jbxx" enableInsert="true"
+               enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false"
+               enableUpdateByExample="false">
             <property name="useActualColumnNames" value="true"/>
             <columnOverride column="ACTIVITY_NAME" property="ACTIVITY_NAME" />
         </table>
-        <table schema="mybatis" tableName="fsx1">
+        <table schema="mybatis" tableName="fsx1" enableInsert="true"
+               enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false"
+               enableUpdateByExample="false">
             <property name="useActualColumnNames" value="true"/>
             <columnOverride column="ACTIVITY_NAME" property="ACTIVITY_NAME" />
         </table>
