@@ -7,7 +7,7 @@
     <properties url="${mybatis.generator.generatorConfig.properties}"/>
     <!--数据库驱动包路径 -->
     <classPathEntry location="${drive.class.path}"/>
-    <context id="Sqlite3" targetRuntime="MyBatis3">
+    <context id="Sqlite3" targetRuntime="Mybatis3Simple" defaultModelType="flat">
         <!--关闭注释 -->
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
@@ -38,13 +38,11 @@
 
         <!--对应数据库表名 -->
         <!-- 要对那些数据表进行生成操作，必须要有一个. -->
-        <table schema="mybatis" tableName="jbxx" enableInsert="true"
+        <table tableName="%" />
+<!--        <table schema="mybatis" tableName="jbxx" enableInsert="true"
                enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true" enableSelectByExample="false"
-               enableDeleteByExample="false" enableCountByExample="false"
-               enableUpdateByExample="false">
+               enableDeleteByPrimaryKey="true" >
             <property name="useActualColumnNames" value="true"/>
-            <columnOverride column="ACTIVITY_NAME" property="ACTIVITY_NAME" />
         </table>
         <table schema="mybatis" tableName="fsx1" enableInsert="true"
                enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
@@ -57,6 +55,6 @@
         <table schema="mybatis" tableName="fsx3">
             <property name="useActualColumnNames" value="true"/>
             <columnOverride column="ACTIVITY_NAME" property="ACTIVITY_NAME" />
-        </table>
+        </table>-->
     </context>
 </generatorConfiguration>

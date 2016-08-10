@@ -2,22 +2,16 @@ package com.lvdouwa.daxue.web.dao;
 
 import com.lvdouwa.daxue.core.generic.GenericDao;
 import com.lvdouwa.daxue.web.model.Fsx3;
-import com.lvdouwa.daxue.web.model.Fsx3Example;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface Fsx3Mapper extends GenericDao {
-    int countByExample(Fsx3Example example);
-
-    int deleteByExample(Fsx3Example example);
+    int deleteByPrimaryKey(Integer tid);
 
     int insert(Fsx3 record);
 
-    int insertSelective(Fsx3 record);
+    Fsx3 selectByPrimaryKey(Integer tid);
 
-    List<Fsx3> selectByExample(Fsx3Example example);
+    List<Fsx3> selectAll();
 
-    int updateByExampleSelective(@Param("record") Fsx3 record, @Param("example") Fsx3Example example);
-
-    int updateByExample(@Param("record") Fsx3 record, @Param("example") Fsx3Example example);
+    int updateByPrimaryKey(Fsx3 record);
 }

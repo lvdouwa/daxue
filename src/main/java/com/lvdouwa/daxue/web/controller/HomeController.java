@@ -5,20 +5,25 @@ import com.lvdouwa.daxue.web.service.JbxxService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import sun.rmi.runtime.Log;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.io.Console;
+import java.util.logging.ConsoleHandler;
 
 /**
  * Home Controller
  * Created by celine on 8/9/2016.
  */
 @Controller
+@RequestMapping("/home")
 public class HomeController {
     @Resource
     private JbxxService jbxxService;
-    @RequestMapping("/home")
-    public ModelAndView index(HttpSession httpSession){
+    @RequestMapping("/index")
+    public String index(HttpSession httpSession){
+        System.out.println("home/index");
         ModelAndView modelAndView = new ModelAndView();
         Jbxx jbxx =jbxxService.selectById(1);
         if(jbxx!=null){
@@ -29,6 +34,6 @@ public class HomeController {
         }else{
             modelAndView.setViewName("/account/false");
         }
-        return modelAndView;
+        return "account/success";
     }
 }
