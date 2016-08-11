@@ -3,6 +3,7 @@ package com.lvdouwa.daxue.web.controller;
 import com.lvdouwa.daxue.web.model.Jbxx;
 import com.lvdouwa.daxue.web.service.JbxxService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import sun.rmi.runtime.Log;
@@ -22,8 +23,9 @@ public class HomeController {
     @Resource
     private JbxxService jbxxService;
     @RequestMapping("/index")
-    public String index(HttpSession httpSession){
-        System.out.println("home/index");
+    public String index(ModelMap modelMap){
+        modelMap.addAttribute("message","Hello");
+/*        System.out.println("home/index");
         ModelAndView modelAndView = new ModelAndView();
         Jbxx jbxx =jbxxService.selectById(1);
         if(jbxx!=null){
@@ -33,7 +35,7 @@ public class HomeController {
 
         }else{
             modelAndView.setViewName("/account/false");
-        }
-        return "account/success";
+        }*/
+        return "/home/index";
     }
 }

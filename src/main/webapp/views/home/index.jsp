@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>${jbxx.name}</title>
+    <title>${message}</title>
 
     <!-- Bootstrap -->
     <link href="<%=request.getContextPath()%>/webjars/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
@@ -30,13 +30,13 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="<%=request.getContextPath()%>/">
                     <img class="cofounderslab-logo" src="<%=request.getContextPath()%>/resources/img/logo/white.png" alt="[C]oFoundersLab"/>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="cofounderslab-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="navbar-item"><a href="/search">Find A Co-Founder</a></li>
+                    <li class="navbar-item"><a href="<%=request.getContextPath()%>/account/success">Find A Co-Founder</a></li>
                     <li class="navbar-item"><a href="/events">Events</a></li>
                     <li class="navbar-item"><a href="http://learning.cofounderslab.com/" target="_blank">Learning Center</a></li>
                     <li class="go-pro"><a href="/premium-membership"><span class="btn btn-wired btn-wired-yellow">Go Premium</span></a></li>                                                                                            <li class="navbar-item"><a href="" data-toggle="modal" data-target="#login-modal">LOGIN</a></li>

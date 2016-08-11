@@ -1,6 +1,9 @@
 package com.lvdouwa.daxue.web.controller;
 
+import com.lvdouwa.daxue.web.model.Jbxx;
+import com.lvdouwa.daxue.web.service.JbxxService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,4 +37,12 @@ public class AccountController {
         }
         return modelAndView;
     }*/
+    @Resource
+    private JbxxService jbxxService;
+    @RequestMapping("/success")
+    public String index(ModelMap modelMap){
+        Jbxx jbxx = jbxxService.selectById(1);
+        modelMap.addAttribute("jbxx",jbxx);
+        return "/account/success";
+    }
 }
