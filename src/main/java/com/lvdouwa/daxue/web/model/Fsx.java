@@ -1,6 +1,6 @@
 package com.lvdouwa.daxue.web.model;
 
-public class Fsx3 {
+public class Fsx {
     private Integer tid;
 
     private Integer uid;

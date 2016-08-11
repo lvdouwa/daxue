@@ -11,6 +11,66 @@
     <result column="doctordegree" jdbcType="INTEGER" property="doctordegree" />
     <result column="masterdegree" jdbcType="INTEGER" property="masterdegree" />
     <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="985or211" jdbcType="VARCHAR" property="985or211" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="web" jdbcType="VARCHAR" property="web" />
+    <result column="profile" jdbcType="VARCHAR" property="profile" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jbxx
+    where uid = #{uid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    insert into jbxx (uid, name, type, 
+      subjection, keydiscipline, academician, 
+      doctordegree, masterdegree, location, 
+      985or211, address, telephone, 
+      web, profile)
+    values (#{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{subjection,jdbcType=VARCHAR}, #{keydiscipline,jdbcType=INTEGER}, #{academician,jdbcType=INTEGER}, 
+      #{doctordegree,jdbcType=INTEGER}, #{masterdegree,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, 
+      #{985or211,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{web,jdbcType=VARCHAR}, #{profile,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lvdouwa.daxue.web.model.Jbxx">
+    update jbxx
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      subjection = #{subjection,jdbcType=VARCHAR},
+      keydiscipline = #{keydiscipline,jdbcType=INTEGER},
+      academician = #{academician,jdbcType=INTEGER},
+      doctordegree = #{doctordegree,jdbcType=INTEGER},
+      masterdegree = #{masterdegree,jdbcType=INTEGER},
+      location = #{location,jdbcType=VARCHAR},
+      985or211 = #{985or211,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      web = #{web,jdbcType=VARCHAR},
+      profile = #{profile,jdbcType=VARCHAR}
+    where uid = #{uid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select uid, name, type, subjection, keydiscipline, academician, doctordegree, masterdegree, 
+    location, 985or211, address, telephone, web, profile
+    from jbxx
+    where uid = #{uid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select uid, name, type, subjection, keydiscipline, academician, doctordegree, masterdegree, 
+    location, 985or211, address, telephone, web, profile
+    from jbxx
+  </select>
+  <resultMap id="BaseResultMap" type="com.lvdouwa.daxue.web.model.Jbxx">
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="subjection" jdbcType="VARCHAR" property="subjection" />
+    <result column="keydiscipline" jdbcType="INTEGER" property="keydiscipline" />
+    <result column="academician" jdbcType="INTEGER" property="academician" />
+    <result column="doctordegree" jdbcType="INTEGER" property="doctordegree" />
+    <result column="masterdegree" jdbcType="INTEGER" property="masterdegree" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
     <result column="is985or211" jdbcType="VARCHAR" property="is985or211" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="telephone" jdbcType="VARCHAR" property="telephone" />
