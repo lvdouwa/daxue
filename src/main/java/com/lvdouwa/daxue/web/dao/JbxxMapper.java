@@ -31,7 +31,7 @@ public interface JbxxMapper extends GenericDao {
 
     int updateByPrimaryKey(Jbxx record);
 
-    ArrayList<Jbxx> queryByJbxx(Jbxx record);
+    ArrayList<Jbxx> queryByJbxxExample(Jbxx record);
 
 
 }

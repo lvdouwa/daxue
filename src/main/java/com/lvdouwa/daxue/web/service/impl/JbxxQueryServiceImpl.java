@@ -4,9 +4,12 @@ import com.lvdouwa.daxue.core.generic.GenericDao;
 import com.lvdouwa.daxue.core.generic.GenericServiceImpl;
 import com.lvdouwa.daxue.web.dao.JbxxMapper;
 import com.lvdouwa.daxue.web.model.Jbxx;
+import com.lvdouwa.daxue.web.service.JbxxQueryService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
+import java.util.ArrayList;
 
 /**
  * Created by DYF-THINK on 2016/8/11.
@@ -16,6 +19,7 @@ public class JbxxQueryServiceImpl extends GenericServiceImpl<Jbxx,Integer> imple
 
     @Resource
     private JbxxMapper jbxxMapper;
+
 
     @Override
     public int insert(Jbxx jbxx) {
@@ -36,6 +40,10 @@ public class JbxxQueryServiceImpl extends GenericServiceImpl<Jbxx,Integer> imple
     public Jbxx selectById(Integer id) {
         return jbxxMapper.selectByPrimaryKey(id);
     }
+
+    //notice: not override
+    public  ArrayList<Jbxx> queryByJbxx( Jbxx jbxx){ return jbxxMapper.queryByJbxxExample(jbxx); }
+
 
     @Override
     public GenericDao<Jbxx, Integer> getDao() {
