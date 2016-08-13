@@ -1,4 +1,4 @@
-package com.lvdouwa.daxue.web.model;
+package com.lvdouwa.daxue.web.domain;
 
 public class Jbxx {
     private Integer uid;

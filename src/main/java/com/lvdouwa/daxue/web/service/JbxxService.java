@@ -1,7 +1,7 @@
 package com.lvdouwa.daxue.web.service;
 
 import com.lvdouwa.daxue.core.generic.GenericService;
-import com.lvdouwa.daxue.web.model.Jbxx;
+import com.lvdouwa.daxue.web.domain.Jbxx;
 
 import java.util.List;
 

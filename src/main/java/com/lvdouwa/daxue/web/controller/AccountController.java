@@ -1,6 +1,6 @@
 package com.lvdouwa.daxue.web.controller;
 
-import com.lvdouwa.daxue.web.model.Jbxx;
+import com.lvdouwa.daxue.web.domain.Jbxx;
 import com.lvdouwa.daxue.web.service.JbxxService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -42,8 +42,9 @@ public class AccountController {
     private JbxxService jbxxService;
     @RequestMapping("/success")
     public String index(ModelMap modelMap){
-        List<Jbxx> jbxxList = jbxxService.selectList();
-        modelMap.addAttribute("jbxx",jbxxList.size());
+        /*List<Jbxx> jbxxList = jbxxService.selectList();*/
+        Jbxx jbxx = jbxxService.selectById(1);
+        modelMap.addAttribute("jbxx",jbxx);
         return "/account/success";
     }
 }

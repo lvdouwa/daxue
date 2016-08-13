@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lvdouwa.daxue.web.dao.FsxMapper" >
+  <resultMap id="BaseResultMap" type="com.lvdouwa.daxue.web.domain.Fsx" >
+    <id column="tid" property="tid" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="year" property="year" jdbcType="INTEGER" />
+    <result column="averagescore" property="averagescore" jdbcType="INTEGER" />
+    <result column="advancebatch" property="advancebatch" jdbcType="INTEGER" />
+    <result column="firstbatch" property="firstbatch" jdbcType="INTEGER" />
+    <result column="secondbatch" property="secondbatch" jdbcType="INTEGER" />
+    <result column="thirdbatch" property="thirdbatch" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    tid, uid, year, averagescore, advancebatch, firstbatch, secondbatch, thirdbatch
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.lvdouwa.daxue.web.domain.FsxExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fsx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from fsx
+    where tid = #{tid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from fsx
+    where tid = #{tid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.lvdouwa.daxue.web.domain.FsxExample" >
+    delete from fsx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.lvdouwa.daxue.web.domain.Fsx" >
+    insert into fsx (tid, uid, year, 
+      averagescore, advancebatch, firstbatch, 
+      secondbatch, thirdbatch)
+    values (#{tid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{year,jdbcType=INTEGER}, 
+      #{averagescore,jdbcType=INTEGER}, #{advancebatch,jdbcType=INTEGER}, #{firstbatch,jdbcType=INTEGER}, 
+      #{secondbatch,jdbcType=INTEGER}, #{thirdbatch,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lvdouwa.daxue.web.domain.Fsx" >
+    insert into fsx
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="year != null" >
+        year,
+      </if>
+      <if test="averagescore != null" >
+        averagescore,
+      </if>
+      <if test="advancebatch != null" >
+        advancebatch,
+      </if>
+      <if test="firstbatch != null" >
+        firstbatch,
+      </if>
+      <if test="secondbatch != null" >
+        secondbatch,
+      </if>
+      <if test="thirdbatch != null" >
+        thirdbatch,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tid != null" >
+        #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="averagescore != null" >
+        #{averagescore,jdbcType=INTEGER},
+      </if>
+      <if test="advancebatch != null" >
+        #{advancebatch,jdbcType=INTEGER},
+      </if>
+      <if test="firstbatch != null" >
+        #{firstbatch,jdbcType=INTEGER},
+      </if>
+      <if test="secondbatch != null" >
+        #{secondbatch,jdbcType=INTEGER},
+      </if>
+      <if test="thirdbatch != null" >
+        #{thirdbatch,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lvdouwa.daxue.web.domain.FsxExample" resultType="java.lang.Integer" >
+    select count(*) from fsx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fsx
+    <set >
+      <if test="record.tid != null" >
+        tid = #{record.tid,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.year != null" >
+        year = #{record.year,jdbcType=INTEGER},
+      </if>
+      <if test="record.averagescore != null" >
+        averagescore = #{record.averagescore,jdbcType=INTEGER},
+      </if>
+      <if test="record.advancebatch != null" >
+        advancebatch = #{record.advancebatch,jdbcType=INTEGER},
+      </if>
+      <if test="record.firstbatch != null" >
+        firstbatch = #{record.firstbatch,jdbcType=INTEGER},
+      </if>
+      <if test="record.secondbatch != null" >
+        secondbatch = #{record.secondbatch,jdbcType=INTEGER},
+      </if>
+      <if test="record.thirdbatch != null" >
+        thirdbatch = #{record.thirdbatch,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fsx
+    set tid = #{record.tid,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      year = #{record.year,jdbcType=INTEGER},
+      averagescore = #{record.averagescore,jdbcType=INTEGER},
+      advancebatch = #{record.advancebatch,jdbcType=INTEGER},
+      firstbatch = #{record.firstbatch,jdbcType=INTEGER},
+      secondbatch = #{record.secondbatch,jdbcType=INTEGER},
+      thirdbatch = #{record.thirdbatch,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lvdouwa.daxue.web.domain.Fsx" >
+    update fsx
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="year != null" >
+        year = #{year,jdbcType=INTEGER},
+      </if>
+      <if test="averagescore != null" >
+        averagescore = #{averagescore,jdbcType=INTEGER},
+      </if>
+      <if test="advancebatch != null" >
+        advancebatch = #{advancebatch,jdbcType=INTEGER},
+      </if>
+      <if test="firstbatch != null" >
+        firstbatch = #{firstbatch,jdbcType=INTEGER},
+      </if>
+      <if test="secondbatch != null" >
+        secondbatch = #{secondbatch,jdbcType=INTEGER},
+      </if>
+      <if test="thirdbatch != null" >
+        thirdbatch = #{thirdbatch,jdbcType=INTEGER},
+      </if>
+    </set>
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lvdouwa.daxue.web.domain.Fsx" >
+    update fsx
+    set uid = #{uid,jdbcType=INTEGER},
+      year = #{year,jdbcType=INTEGER},
+      averagescore = #{averagescore,jdbcType=INTEGER},
+      advancebatch = #{advancebatch,jdbcType=INTEGER},
+      firstbatch = #{firstbatch,jdbcType=INTEGER},
+      secondbatch = #{secondbatch,jdbcType=INTEGER},
+      thirdbatch = #{thirdbatch,jdbcType=INTEGER}
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+</mapper>

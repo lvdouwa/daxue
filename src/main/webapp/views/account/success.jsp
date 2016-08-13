@@ -11,6 +11,6 @@
     <title></title>
 </head>
 <body>
-  欢迎！${jbxx}
+  欢迎！${jbxx.name}
 </body>
 </html>

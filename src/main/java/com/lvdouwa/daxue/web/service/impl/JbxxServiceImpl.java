@@ -3,7 +3,7 @@ package com.lvdouwa.daxue.web.service.impl;
 import com.lvdouwa.daxue.core.generic.GenericDao;
 import com.lvdouwa.daxue.core.generic.GenericServiceImpl;
 import com.lvdouwa.daxue.web.dao.JbxxMapper;
-import com.lvdouwa.daxue.web.model.Jbxx;
+import com.lvdouwa.daxue.web.domain.Jbxx;
 import com.lvdouwa.daxue.web.service.JbxxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +33,7 @@ public class JbxxServiceImpl implements JbxxService {
     }
 
     public Jbxx selectById(Integer id) {
-        return null;
+        return jbxxMapper.selectByPrimaryKey(id);
     }
 
     public Jbxx selectOne() {
@@ -41,7 +41,7 @@ public class JbxxServiceImpl implements JbxxService {
     }
 
     public List<Jbxx> selectList() {
-        return jbxxMapper.getAll();
+        return null;
     }
 
 }
