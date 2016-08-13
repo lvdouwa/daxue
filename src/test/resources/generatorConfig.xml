@@ -25,7 +25,7 @@
         </javaModelGenerator>
 
         <!--生成xml mapper文件 路径 -->
-        <sqlMapGenerator targetPackage="${xml.com.lvdouwa.daxue.web.mapper.package}" targetProject="${target.project}">
+        <sqlMapGenerator targetPackage="${xml.com.lvdouwa.daxue.web.mapper.package}" targetProject="${target.resources}">
             <property name="enableSubPackages" value="true"/>
 
         </sqlMapGenerator>
