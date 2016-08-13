@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by celine on 8/9/2016.
@@ -41,8 +42,8 @@ public class AccountController {
     private JbxxService jbxxService;
     @RequestMapping("/success")
     public String index(ModelMap modelMap){
-        Jbxx jbxx = jbxxService.selectById(1);
-        modelMap.addAttribute("jbxx",jbxx);
+        List<Jbxx> jbxxList = jbxxService.selectList();
+        modelMap.addAttribute("jbxx",jbxxList.size());
         return "/account/success";
     }
 }

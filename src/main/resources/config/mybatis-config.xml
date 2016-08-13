@@ -36,6 +36,7 @@
 
         <!-- 日志log4j -->
         <setting name="logImpl" value="LOG4J"/>
+
         <!-- Allows using RowBounds on nested statements -->
         <setting name="safeRowBoundsEnabled" value="false"/>
 

@@ -1,17 +1,10 @@
 package com.lvdouwa.daxue.web.dao;
 
-import com.lvdouwa.daxue.core.generic.GenericDao;
 import com.lvdouwa.daxue.web.model.Jbxx;
-import java.util.List;
 
-public interface JbxxMapper extends GenericDao {
-    int deleteByPrimaryKey(Integer uid);
+import java.util.ArrayList;
 
-    int insert(Jbxx record);
+public interface JbxxMapper {
 
-    Jbxx selectByPrimaryKey(Integer uid);
-
-    List<Jbxx> selectAll();
-
-    int updateByPrimaryKey(Jbxx record);
+    ArrayList<Jbxx> getAll ();
 }

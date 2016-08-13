@@ -8,39 +8,40 @@ import com.lvdouwa.daxue.web.service.JbxxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by u6031313 on 8/9/2016.
  */
 @Service("jbxxService")
-public class JbxxServiceImpl extends GenericServiceImpl<Jbxx,Integer> implements JbxxService {
+public class JbxxServiceImpl implements JbxxService {
 
-    @Resource
+    @Autowired
     private JbxxMapper jbxxMapper;
 
-    @Override
+
     public int insert(Jbxx jbxx) {
-        return jbxxMapper.insertSelective(jbxx);
+        return 0;
     }
 
-    @Override
-    public int delete(Integer id) {
-        return jbxxMapper.deleteByPrimaryKey(id);
-    }
-
-    @Override
     public int update(Jbxx jbxx) {
-        return jbxxMapper.updateByPrimaryKey(jbxx);
+        return 0;
     }
 
-    @Override
+    public int delete(Integer id) {
+        return 0;
+    }
+
     public Jbxx selectById(Integer id) {
-        return jbxxMapper.selectByPrimaryKey(id);
+        return null;
     }
 
-    @Override
-    public GenericDao<Jbxx, Integer> getDao() {
-        return jbxxMapper;
+    public Jbxx selectOne() {
+        return null;
     }
+
+    public List<Jbxx> selectList() {
+        return jbxxMapper.getAll();
+    }
+
 }
