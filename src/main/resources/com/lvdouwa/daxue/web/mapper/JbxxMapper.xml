@@ -350,4 +350,49 @@
       profile = #{profile,jdbcType=VARCHAR}
     where uid = #{uid,jdbcType=INTEGER}
   </update>
+  <select id="queryByJbxxExample" parameterType="com.lvdouwa.daxue.web.model.Jbxx" resultType="BaseResultMap">
+  select * from jbxx where 1=1
+    <if test="record.uid != null" >
+      uid = #{record.uid,jdbcType=INTEGER},
+    </if>
+    <if test="record.name != null" >
+      name = #{record.name,jdbcType=VARCHAR},
+    </if>
+    <if test="record.type != null" >
+      type = #{record.type,jdbcType=VARCHAR},
+    </if>
+    <if test="record.subjection != null" >
+      subjection = #{record.subjection,jdbcType=VARCHAR},
+    </if>
+    <if test="record.keydiscipline != null" >
+      keydiscipline = #{record.keydiscipline,jdbcType=INTEGER},
+    </if>
+    <if test="record.academician != null" >
+      academician = #{record.academician,jdbcType=INTEGER},
+    </if>
+    <if test="record.doctordegree != null" >
+      doctordegree = #{record.doctordegree,jdbcType=INTEGER},
+    </if>
+    <if test="record.masterdegree != null" >
+      masterdegree = #{record.masterdegree,jdbcType=INTEGER},
+    </if>
+    <if test="record.location != null" >
+      location = #{record.location,jdbcType=VARCHAR},
+    </if>
+    <if test="record.is985or211 != null" >
+      is985or211 = #{record.is985or211,jdbcType=VARCHAR},
+    </if>
+    <if test="record.address != null" >
+      address = #{record.address,jdbcType=VARCHAR},
+    </if>
+    <if test="record.telephone != null" >
+      telephone = #{record.telephone,jdbcType=VARCHAR},
+    </if>
+    <if test="record.web != null" >
+      web = #{record.web,jdbcType=VARCHAR},
+    </if>
+    <if test="record.profile != null" >
+      profile = #{record.profile,jdbcType=VARCHAR},
+    </if>
+  </select>
 </mapper>

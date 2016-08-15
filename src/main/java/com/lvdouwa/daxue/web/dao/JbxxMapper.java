@@ -3,6 +3,8 @@ package com.lvdouwa.daxue.web.dao;
 import com.lvdouwa.daxue.core.generic.GenericDao;
 import com.lvdouwa.daxue.web.domain.Jbxx;
 import com.lvdouwa.daxue.web.domain.JbxxExample;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -28,4 +30,6 @@ public interface JbxxMapper extends GenericDao {
     int updateByPrimaryKeySelective(Jbxx record);
 
     int updateByPrimaryKey(Jbxx record);
+
+    ArrayList<Jbxx> queryByJbxxExample(Jbxx record);
 }
