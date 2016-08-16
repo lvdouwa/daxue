@@ -6,6 +6,7 @@ import com.lvdouwa.daxue.web.domain.Jbxx;
 import java.util.List;
 
 /**
+ *
  * Created by u6031313 on 8/9/2016.
  */
 public interface JbxxService extends GenericService<Jbxx,Integer> {
